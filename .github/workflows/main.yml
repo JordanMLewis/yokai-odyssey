@@ -1,0 +1,34 @@
+name: main
+on:
+  workflow_dispatch:
+  push:
+    branches: "main"
+  pull_request:
+
+jobs:
+  rust-checks:
+    runs-on: [self-hosted, Linux, X64]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: "0"
+
+      - name: Install Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+
+      - name: Install cargo-binstall
+        run: cargo install cargo-binstall --locked
+
+      - name: Install just
+        run: cargo binstall --no-confirm just
+
+      - name: Check formatting
+        run: just fmt-check
+
+      - name: Check clippy
+        run: just check
+
+      - name: Build
+        run: just build
+
+      

@@ -1,9 +1,5 @@
-# AGBRS template
-
-## A basic template example for agb projects
-
-This makes getting started with a new project for the Game Boy Advance in rust really simple, by providing
-all the boiler plate files for you.
+# Yokai Odyssey
+A collection of demo projects for the Gameboy Advance (GBA).
 
 ## Building
 
@@ -22,32 +18,7 @@ rust with the following: `cargo install agb-gbafix`. This is not required if you
 
 ### Running in an emulator
 
-Once you have the prerequisites installed, you should be able to build using
-
-```sh
-cargo build
-```
-
-or in release mode (recommended for the final version to ship to players)
-
-```sh
-cargo build --release
-```
-
-The resulting file will be in `target/thumbv4t-none-eabi/debug/<your game>` or `target/thumbv4t-none-eabi/release/<your game>` depending on
-whether you did a release or debug build.
-
-If you have `mgba-qt` in your path, you will be able to run your game with
-
-```sh
-cargo run
-```
-
-or in release mode
-
-```sh
-cargo run --release
-```
+Once you have the prerequisites installed, run `just` to view available commands.
 
 ## Starting development
 
