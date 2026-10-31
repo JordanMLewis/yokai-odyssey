@@ -1,16 +1,11 @@
-[package]
-name = "agb_template"
-version = "0.1.0"
-authors = [""]
-edition = "2024"
+[workspace]
+members = [
+    "games/01_demo",
+]
+resolver = "3"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
+[workspace.dependencies]
 agb = "0.25.0"
-
-[dev-dependencies]
-clippy = "0.0.302"
 
 [profile.dev]
 opt-level = 3
